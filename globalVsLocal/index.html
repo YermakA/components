@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>template</title>
+</head>
+<body>
+    <div id="app">
+        <h1 >Vue.js Components foundamentals</h1>
+       <div class="plans">
+        <plan-picker></plan-picker>
+       </div>
+    </div>
+    <script type="text/x-template" id="plan-picker-template">
+        <plan  v-for="plan in plans" :key="plan" :name="plan" :price="10"></plan>
+    </script>
+    <script type="text/x-template" id="plan-template">
+        <div class="plan">
+          <div class="description">
+            <span class="title">
+              {{name}}
+            </span>
+          </div>
+        </div>
+      </script>
+</body>
+
+<script  src="https://unpkg.com/vue@3"></script>
+<script src="app.js"></script>
+</html>

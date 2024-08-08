@@ -1,20 +1,28 @@
-Vue.createApp({})
-    .component("plan-picker", {
-        template: "#plan-picker-template",
-        data() {
-            return {
-                plans: ["The Single", "The Curious", "The Addict"],
-            }
+let pickerComponent = {
+    template: "#plan-picker-template",
+    components: {
+        plan: planComponent,
+    },
+    data() {
+        return {
+            plans: ["The Single", "The Curious", "The Addict"],
+        }
+    },
+}
+
+let planComponent = {
+    template: "#plan-template",
+    props: {
+        name: {
+            type: String,
+            required: true,
         },
-    })
-    .component("plan", {
-        template: "#plan-template",
-        props: {
-            name: {
-                type: String,
-                required: true,
-            },
-            price: Number,
-        },
-    })
-    .mount("#app")
+        price: Number,
+    },
+}
+
+Vue.createApp({
+    components: {
+        "plan-picker": pickerComponent,
+    },
+}).mount("#app")
