@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>foundamentals</title>
+    <title>template</title>
 </head>
 <body>
     <div id="app">
@@ -13,6 +13,9 @@
         <click-counter></click-counter>
         <click-counter></click-counter>
     </div>
+    <script type="text/x=template" id="click-counter-template">
+        <button @click="count++">the count os: {{count}}</button>
+    </script>
 </body>
 <script  src="https://unpkg.com/vue@3"></script>
 <script src="app.js"></script>
